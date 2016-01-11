@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  IssueViewController.h
 //  HChi
 //
 //  Created by uniQue on 16/1/11.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface IssueViewController : CustomViewController
 
 @end
-

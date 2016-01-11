@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+#import "IssueViewController.h"
+#import "PersonViewController.h"
+#import "HCGlobalVariable.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +21,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
+    
+    UINavigationController * rootView =[[UINavigationController alloc] initWithRootViewController: [RootViewController new]];
+    UINavigationController * issueView = [[UINavigationController alloc] initWithRootViewController: [IssueViewController new]];
+    UINavigationController * settingView = [[UINavigationController alloc] initWithRootViewController: [PersonViewController new]];
+    NSArray * viewArray = @[rootView, issueView, settingView];
+    
+    UITabBarController * tabBar = [UITabBarController new];
+    [tabBar setViewControllers: viewArray];
+    
+    self.window.rootViewController = tabBar;
+    [self.window makeKeyAndVisible];
+    
+    
+    // 去除Nav 下划线
+    [[UINavigationBar appearance] setShadowImage:[UIImage new]];
+    // 自定义背景
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    
+    HCGlobalVariable * hcGV = [HCGlobalVariable new];
+    [[UINavigationBar appearance] insertSubview:hcGV.NCBackgroundView atIndex:99];
+    
     return YES;
 }
 
