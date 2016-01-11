@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //你好。。。
+    //你好。。。 taihai
 }
 
 - (void)viewWillAppear:(BOOL)animated {
