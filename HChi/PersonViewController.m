@@ -7,6 +7,7 @@
 //
 
 #import "PersonViewController.h"
+#import "HCGlobalVariable.h"
 
 @interface PersonViewController ()
 
@@ -28,6 +29,8 @@
     [super viewDidLoad];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    
+    [self.navigationController.navigationBar insertSubview:HCNCBackgroundForSubView atIndex:0];
     
 }
 

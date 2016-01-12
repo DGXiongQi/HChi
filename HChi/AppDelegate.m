@@ -35,16 +35,36 @@
     self.window.rootViewController = tabBar;
     [self.window makeKeyAndVisible];
     
+    [self initHCGV];
     
     // 去除Nav 下划线
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     // 自定义背景
     [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     
-    HCGlobalVariable * hcGV = [HCGlobalVariable new];
-    [[UINavigationBar appearance] insertSubview:hcGV.NCBackgroundView atIndex:99];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     
     return YES;
+}
+
+- (void)initHCGV {
+    
+    ScreenFrame = [UIScreen mainScreen].bounds.size;
+    
+    HCNCBackgroundColor = [UIColor colorWithRed:0.6185 green:0.829 blue:0.6052 alpha:1.0];
+    
+    HCNCBackgroundForRootView = [CAGradientLayer layer];
+    HCNCBackgroundForRootView.frame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64);
+    HCNCBackgroundForRootView.colors = [NSArray arrayWithObjects:
+                                       (id)HCNCBackgroundColor.CGColor,
+                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.6].CGColor,
+                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.3].CGColor,
+                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.0].CGColor,
+                                       nil];
+    HCNCBackgroundForRootView.locations = @[@(0.3), @(0.5), @(0.7), @(1.0)];
+    
+    HCNCBackgroundForSubView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -20, ScreenFrame.width, 64)];
+    HCNCBackgroundForSubView.backgroundColor = HCNCBackgroundColor;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

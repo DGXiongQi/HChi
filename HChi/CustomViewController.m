@@ -17,16 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //你好。。。 taihai
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setHidesBottomBarWhenPushed:NO];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setHidesBottomBarWhenPushed:YES];
+    [self setHidesBottomBarWhenPushed:false];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self setHidesBottomBarWhenPushed:true];
+
 }
 
 - (void)didReceiveMemoryWarning {

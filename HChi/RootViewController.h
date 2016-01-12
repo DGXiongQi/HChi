@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CustomViewController.h"
 
+
 @interface RootViewController : CustomViewController
 
-
+@property (nonatomic, strong) UITableView* rootTableView;
 
 @end

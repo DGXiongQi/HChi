@@ -23,7 +23,7 @@
     return nil;
 }
 
-- (id)initWithRootCell:(NSArray *)aItems cellIdentifier:(NSString *)aCellIdentifier cellBlock:(TableViewCellConfigureBlock)aCellBlock {
+- (id)initWithItems:(NSArray *)aItems cellIdentifier:(NSString *)aCellIdentifier cellBlock:(TableViewCellConfigureBlock)aCellBlock {
     self = [super init];
     if (self) {
         self.items = aItems;

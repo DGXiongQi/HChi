@@ -7,17 +7,32 @@
 //
 
 #import "RootViewCell.h"
+#import "HCGlobalVariable.h"
 
 @implementation RootViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
++ (UINib *)nib {
+    return [UINib nibWithNibName:@"RootViewCell" bundle:nil];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)awakeFromNib {
+}
 
-    // Configure the view for the selected state
+- (void)configureCellWithData:(NSDictionary *)dic {
+    NSString * title = dic[@"title"];
+    self.titleLabel.text = title;
+}
+
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    if (highlighted) {
+        self.hcGV = [HCGlobalVariable new];
+        self.titleLabel.shadowColor = HCNCBackgroundColor;
+        self.titleLabel.shadowOffset = CGSizeMake(0, 3);
+    } else {
+        self.titleLabel.shadowColor = nil;
+    }
 }
 
 @end
