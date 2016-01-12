@@ -7,6 +7,7 @@
 //
 
 #import "TableViewDataSource.h"
+#import "HCGlobalVariable.h"
 
 @interface TableViewDataSource ()
 
@@ -61,9 +62,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
-    
     id item = (NSDictionary *)[self cellConfigureWithIndexPath:indexPath];
+    
     self.configureCellBlock(cell, item);
+    
     return cell;
 }
 

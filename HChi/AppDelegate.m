@@ -37,34 +37,41 @@
     
     [self initHCGV];
     
+    // 导航栏颜色
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     // 去除Nav 下划线
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     // 自定义背景
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    
-    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage new]
+                                       forBarMetrics:UIBarMetricsDefault];
     
     return YES;
 }
 
+/// 初始化全局变量
 - (void)initHCGV {
     
-    ScreenFrame = [UIScreen mainScreen].bounds.size;
+    ScreenSize = [UIScreen mainScreen].bounds.size;
     
-    HCNCBackgroundColor = [UIColor colorWithRed:0.6185 green:0.829 blue:0.6052 alpha:1.0];
+    HCColorForTheme = [UIColor colorWithRed:0.39 green:0.60 blue:0.0 alpha:1.0];
+    HCColorForSubView = [UIColor colorWithWhite:1.0 alpha:1.0];
+    HCColorForRootView = [UIColor colorWithWhite:0.0 alpha:0.6];
     
+    // RootView
     HCNCBackgroundForRootView = [CAGradientLayer layer];
-    HCNCBackgroundForRootView.frame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, 64);
-    HCNCBackgroundForRootView.colors = [NSArray arrayWithObjects:
-                                       (id)HCNCBackgroundColor.CGColor,
-                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.6].CGColor,
-                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.3].CGColor,
-                                       (id)[HCNCBackgroundColor colorWithAlphaComponent:0.0].CGColor,
-                                       nil];
+    HCNCBackgroundForRootView.frame = CGRectMake(0, -20, ScreenSize.width, 64);
+    
+    HCNCBackgroundForRootView.colors = @[(id)HCColorForRootView.CGColor,
+                                         (id)[HCColorForRootView colorWithAlphaComponent:0.4].CGColor,
+                                         (id)[HCColorForRootView colorWithAlphaComponent:0.1].CGColor,
+                                         (id)[HCColorForRootView colorWithAlphaComponent:0.0].CGColor];
     HCNCBackgroundForRootView.locations = @[@(0.3), @(0.5), @(0.7), @(1.0)];
     
-    HCNCBackgroundForSubView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -20, ScreenFrame.width, 64)];
-    HCNCBackgroundForSubView.backgroundColor = HCNCBackgroundColor;
+    // SubView
+    HCNCBackgroundForSubView = [UIImageView new];
+    HCNCBackgroundForSubView.backgroundColor = HCColorForSubView;
+    HCNCBackgroundForSubView.frame = CGRectMake(0, -20, ScreenSize.width, 64);
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

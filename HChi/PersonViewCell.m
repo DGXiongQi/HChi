@@ -1,18 +1,14 @@
 //
-//  RootViewCell.m
+//  PersonViewCell.m
 //  HChi
 //
-//  Created by uniQue on 16/1/11.
+//  Created by uniQue on 16/1/12.
 //  Copyright © 2016年 uniQue. All rights reserved.
 //
 
-#import "RootViewCell.h"
+#import "PersonViewCell.h"
 
-@implementation RootViewCell
-
-+ (UINib *)nib {
-    return [UINib nibWithNibName:@"RootViewCell" bundle:nil];
-}
+@implementation PersonViewCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -20,7 +16,7 @@
 
 - (void)configureCellWithDic:(NSDictionary *)dic {
     NSString * title = dic[@"title"];
-    self.rootTitleLabel.text = title;
+    self.textLabel.text = title;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

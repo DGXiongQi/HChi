@@ -8,18 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-//extern UIImageView * hc_NCBackgroundForSubView;
-extern UIColor * HCNCBackgroundColor;
+
+extern UIColor * HCColorForSubView;
+extern UIColor * HCColorForRootView;
+extern UIColor * HCColorForTheme;
+
 extern UIImageView * HCNCBackgroundForSubView;
 extern CAGradientLayer * HCNCBackgroundForRootView;
-extern CGSize ScreenFrame;
+extern CGSize ScreenSize;
+
+//extern int TableViewLoadType;
+//extern int CellIndexPath;
+
 
 
 
 @interface HCGlobalVariable : NSObject
-
-//@property (nonatomic, strong) UIImageView * NCBackgroundForSubView;
-//@property (nonatomic, strong) CAGradientLayer * NCBackgroundForRootView;
-//@property (nonatomic) CGRect ScreenFrame;
 
 @end

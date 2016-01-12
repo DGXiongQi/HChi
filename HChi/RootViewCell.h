@@ -8,16 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class HCGlobalVariable;
 @interface RootViewCell : UITableViewCell
 
 + (UINib *)nib;
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *moreButton;
+- (void)configureCellWithDic:(NSDictionary *)dic;
 
-@property (nonatomic, strong) HCGlobalVariable* hcGV;
-
-- (void)configureCellWithData:(NSDictionary *)dic;
+@property (weak, nonatomic) IBOutlet UILabel *rootTitleLabel;
 
 @end

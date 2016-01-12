@@ -18,7 +18,11 @@
 		D40FDE781C4342BA00A32500 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40FDE771C4342BA00A32500 /* IssueViewController.m */; };
 		D40FDE7B1C43434D00A32500 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40FDE7A1C43434D00A32500 /* PersonViewController.m */; };
 		D47271971C449A4A00FAE8DF /* RootViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D47271961C449A4A00FAE8DF /* RootViewCell.xib */; };
-		D47271A41C44A43F00FAE8DF /* GuessYouLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47271A31C44A43F00FAE8DF /* GuessYouLikeViewController.m */; };
+		D47271BC1C44DE5E00FAE8DF /* GuessYouLikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D47271BB1C44DE5E00FAE8DF /* GuessYouLikeViewController.m */; };
+		D47271CC1C44EC7200FAE8DF /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D47271BE1C44EC7200FAE8DF /* img1.jpg */; };
+		D47271CE1C44EC7200FAE8DF /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D47271C01C44EC7200FAE8DF /* img2.jpg */; };
+		D47271CF1C44EC7200FAE8DF /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D47271C11C44EC7200FAE8DF /* img3.jpg */; };
+		D47271DD1C44EE3400FAE8DF /* PersonViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D47271DC1C44EE3400FAE8DF /* PersonViewCell.m */; };
 		D49F2BE41C436CDE009644F1 /* RootView.plist in Resources */ = {isa = PBXBuildFile; fileRef = D49F2BE31C436CDE009644F1 /* RootView.plist */; };
 		D49F2BEB1C437DAC009644F1 /* RootViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D49F2BEA1C437DAC009644F1 /* RootViewCell.m */; };
 		D49F2BF41C43827C009644F1 /* TableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D49F2BF31C43827C009644F1 /* TableViewDataSource.m */; };
@@ -65,8 +69,13 @@
 		D40FDE791C43434D00A32500 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		D40FDE7A1C43434D00A32500 /* PersonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		D47271961C449A4A00FAE8DF /* RootViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewCell.xib; sourceTree = "<group>"; };
-		D47271A21C44A43F00FAE8DF /* GuessYouLikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuessYouLikeViewController.h; sourceTree = "<group>"; };
-		D47271A31C44A43F00FAE8DF /* GuessYouLikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuessYouLikeViewController.m; sourceTree = "<group>"; };
+		D47271BA1C44DE5E00FAE8DF /* GuessYouLikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuessYouLikeViewController.h; sourceTree = "<group>"; };
+		D47271BB1C44DE5E00FAE8DF /* GuessYouLikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuessYouLikeViewController.m; sourceTree = "<group>"; };
+		D47271BE1C44EC7200FAE8DF /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
+		D47271C01C44EC7200FAE8DF /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
+		D47271C11C44EC7200FAE8DF /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img3.jpg; sourceTree = "<group>"; };
+		D47271DB1C44EE3400FAE8DF /* PersonViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewCell.h; sourceTree = "<group>"; };
+		D47271DC1C44EE3400FAE8DF /* PersonViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonViewCell.m; sourceTree = "<group>"; };
 		D49F2BE31C436CDE009644F1 /* RootView.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RootView.plist; sourceTree = "<group>"; };
 		D49F2BE91C437DAC009644F1 /* RootViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewCell.h; sourceTree = "<group>"; };
 		D49F2BEA1C437DAC009644F1 /* RootViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewCell.m; sourceTree = "<group>"; };
@@ -140,6 +149,7 @@
 		D40FDE3A1C43394100A32500 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D47271BD1C44EC7200FAE8DF /* imag */,
 				D40FDE3B1C43394100A32500 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -183,6 +193,7 @@
 				D49F2BF21C43827C009644F1 /* TableViewDataSource.h */,
 				D49F2BF31C43827C009644F1 /* TableViewDataSource.m */,
 				D472719E1C44A3CE00FAE8DF /* RootViewCell */,
+				D47271DA1C44EE1E00FAE8DF /* PersonViewCell */,
 				D49F2BE31C436CDE009644F1 /* RootView.plist */,
 			);
 			name = Model;
@@ -200,8 +211,8 @@
 			children = (
 				D40FDE6D1C433A7900A32500 /* RootViewController.h */,
 				D40FDE6E1C433A7900A32500 /* RootViewController.m */,
-				D47271A21C44A43F00FAE8DF /* GuessYouLikeViewController.h */,
-				D47271A31C44A43F00FAE8DF /* GuessYouLikeViewController.m */,
+				D47271BA1C44DE5E00FAE8DF /* GuessYouLikeViewController.h */,
+				D47271BB1C44DE5E00FAE8DF /* GuessYouLikeViewController.m */,
 			);
 			name = RootView;
 			sourceTree = "<group>";
@@ -232,6 +243,25 @@
 				D47271961C449A4A00FAE8DF /* RootViewCell.xib */,
 			);
 			name = RootViewCell;
+			sourceTree = "<group>";
+		};
+		D47271BD1C44EC7200FAE8DF /* imag */ = {
+			isa = PBXGroup;
+			children = (
+				D47271BE1C44EC7200FAE8DF /* img1.jpg */,
+				D47271C01C44EC7200FAE8DF /* img2.jpg */,
+				D47271C11C44EC7200FAE8DF /* img3.jpg */,
+			);
+			path = imag;
+			sourceTree = "<group>";
+		};
+		D47271DA1C44EE1E00FAE8DF /* PersonViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D47271DB1C44EE3400FAE8DF /* PersonViewCell.h */,
+				D47271DC1C44EE3400FAE8DF /* PersonViewCell.m */,
+			);
+			name = PersonViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,10 +370,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47271CC1C44EC7200FAE8DF /* img1.jpg in Resources */,
 				D47271971C449A4A00FAE8DF /* RootViewCell.xib in Resources */,
+				D47271CF1C44EC7200FAE8DF /* img3.jpg in Resources */,
 				D40FDE4A1C43394100A32500 /* LaunchScreen.storyboard in Resources */,
 				D49F2BE41C436CDE009644F1 /* RootView.plist in Resources */,
 				D40FDE471C43394100A32500 /* Assets.xcassets in Resources */,
+				D47271CE1C44EC7200FAE8DF /* img2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +406,8 @@
 				D40FDE6F1C433A7900A32500 /* RootViewController.m in Sources */,
 				D40FDE781C4342BA00A32500 /* IssueViewController.m in Sources */,
 				D40FDE3C1C43394100A32500 /* main.m in Sources */,
-				D47271A41C44A43F00FAE8DF /* GuessYouLikeViewController.m in Sources */,
+				D47271DD1C44EE3400FAE8DF /* PersonViewCell.m in Sources */,
+				D47271BC1C44DE5E00FAE8DF /* GuessYouLikeViewController.m in Sources */,
 				D49F2BF41C43827C009644F1 /* TableViewDataSource.m in Sources */,
 				D40FDE751C433ACF00A32500 /* CustomViewController.m in Sources */,
 				D40FDE7B1C43434D00A32500 /* PersonViewController.m in Sources */,

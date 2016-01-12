@@ -20,13 +20,12 @@
     
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [self setHidesBottomBarWhenPushed:false];
+- (void)viewDidAppear:(BOOL)animated {
+    self.hidesBottomBarWhenPushed = true;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [self setHidesBottomBarWhenPushed:true];
-
+- (void)viewWillDisappear:(BOOL)animated {
+    self.hidesBottomBarWhenPushed = false;
 }
 
 - (void)didReceiveMemoryWarning {

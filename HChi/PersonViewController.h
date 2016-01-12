@@ -11,7 +11,6 @@
 
 @interface PersonViewController : CustomViewController
 
-@property (nonatomic, strong) UITableView * tableView;
-
+@property (nonatomic, strong) UITableView * personTableView;
 
 @end

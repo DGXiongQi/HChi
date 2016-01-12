@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar insertSubview:HCNCBackgroundForSubView atIndex:0];
+    [self.navigationController.navigationBar addSubview:HCNCBackgroundForSubView];
 }
 
 - (void)didReceiveMemoryWarning {
