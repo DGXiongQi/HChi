@@ -53,7 +53,7 @@ UILabel * userNickName;
     [self createHeadView];
 }
 
-// 创建头部视图
+#pragma mark 创建头部视图
 - (void)createHeadView {
     
     headView = [[UIView alloc] initWithFrame:headViewRect];
@@ -94,6 +94,7 @@ UILabel * userNickName;
     
 }
 
+#pragma mark 初始化view
 - (void)initView {
     
     headViewRect = CGRectMake(0, 0, ScreenSize.width, 200);
