@@ -9,9 +9,11 @@
 #import "HCTabBarController.h"
 #import "HCGlobalVariable.h"
 #import "HCTabBarView.h"
+#import "IssueView.h"
 
-@interface HCTabBarController ()
+@interface HCTabBarController ()<RemoveEffectViewProtocol>
 
+@property (nonatomic, strong) IssueView * issueBackgroundView;
 @end
 
 @implementation HCTabBarController
@@ -21,25 +23,71 @@
     // Do any additional setup after loading the view.
     
     self.tabBar.hidden = true;
+    [self.view addSubview:HCNCTabBarView];
     
-    CGRect tabBarViewFrame = CGRectMake(0, ScreenSize.height - 49, ScreenSize.width, 49);
-    HCTabBarView * tabBarView = [[HCTabBarView alloc] initWithFrame:tabBarViewFrame];
-    [self.view addSubview:tabBarView];
-    
-    [tabBarView.selectRootViewButton addTarget:self action:@selector(rootViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [tabBarView.selectIssueViewButton addTarget:self action:@selector(issueViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [tabBarView.selectPersonViewButton addTarget:self action:@selector(personViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [HCNCTabBarView.selectRootViewButton addTarget:self action:@selector(rootViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [HCNCTabBarView.selectIssueViewButton addTarget:self action:@selector(issueViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [HCNCTabBarView.selectPersonViewButton addTarget:self action:@selector(personViewButtonAction) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)rootViewButtonAction {
     self.selectedIndex = 0;
 }
 
+CGRect _loadRect;
+CGRect _recoverLoadRect;
+CGRect _productRect;
+CGRect _recoverProductRect;
+
 - (void)issueViewButtonAction {
-    self.selectedIndex = 1;
+    
+    if (!_issueBackgroundView) {
+        _issueBackgroundView = [[IssueView alloc] initWithFrame:CGRectMake(0, 0, ScreenSize.width, ScreenSize.height)];
+        _issueBackgroundView.removeDelegate = self;
+        [self.view insertSubview:_issueBackgroundView atIndex:2];
+        
+        _loadRect = _issueBackgroundView.uploadMenuButton.frame;
+        _recoverLoadRect = _loadRect;
+        _loadRect.origin.y = ScreenSize.height;
+        _loadRect.origin.x = ScreenSize.width/2/2 + ScreenSize.width/2/2/2;
+        _loadRect.size = CGSizeMake(0, 0);
+        _issueBackgroundView.uploadMenuButton.frame = _loadRect;
+        
+        _productRect = _issueBackgroundView.uploadProductButton.frame;
+        _recoverProductRect = _productRect;
+        _productRect.origin.y = ScreenSize.height;
+        _issueBackgroundView.uploadProductButton.frame = _productRect;
+        
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            _issueBackgroundView.alpha = 1;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                _issueBackgroundView.uploadMenuButton.frame = _recoverLoadRect;
+                _issueBackgroundView.uploadProductButton.frame = _recoverProductRect;
+            } completion:nil];
+        }];
+    } else {
+        [UIView animateWithDuration:0.5 animations:^{
+            _issueBackgroundView.uploadMenuButton.frame = _loadRect;
+            _issueBackgroundView.uploadProductButton.frame = _productRect;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                _issueBackgroundView.alpha = 0;
+            } completion:^(BOOL finished) {
+                [_issueBackgroundView removeFromSuperview];
+                _issueBackgroundView = nil;
+            }];
+        }];
+    }
+    
+}
+
+- (void)removeSelf {
+    [self issueViewButtonAction];
 }
 
 - (void)personViewButtonAction {
-    self.selectedIndex = 2;
+    self.selectedIndex = 1;
 }
 
 - (void)didReceiveMemoryWarning {
